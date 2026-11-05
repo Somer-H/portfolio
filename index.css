@@ -77,6 +77,7 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1.5rem;
 }
 
 .nav-logo {
@@ -86,12 +87,13 @@ h1, h2, h3 {
     color: var(--accent-color);
     text-decoration: none;
     letter-spacing: 0.05em;
+    flex-shrink: 0;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
+    gap: 1.6rem;
 }
 
 .nav-links a {
@@ -99,6 +101,8 @@ h1, h2, h3 {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: color 0.2s ease;
 }
 
@@ -108,21 +112,31 @@ h1, h2, h3 {
 }
 
 .nav-cv-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
     padding: 0.5rem 1.2rem;
     border: 1px solid var(--accent-color);
     border-radius: 50px;
     color: var(--accent-color) !important;
     font-weight: 600 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-cv-btn:hover {
     background: var(--accent-color);
     color: var(--bg-color) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px var(--accent-glow);
 }
 
 .lang-toggle {
     width: 42px;
     height: 32px;
+    flex-shrink: 0;
     border-radius: 50px;
     border: 1px solid var(--border-color);
     background: transparent;
@@ -777,7 +791,7 @@ section.visible {
     transform: translateY(0);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1100px) {
     .nav-toggle {
         display: flex;
     }
