@@ -12,84 +12,137 @@
 
 <body>
 
+    <nav id="siteNav" class="site-nav">
+        <div class="nav-inner container">
+            <a href="#top" class="nav-logo">HS</a>
+            <button id="navToggle" class="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div id="navLinks" class="nav-links">
+                <a href="#top" data-i18n="nav.home">Inicio</a>
+                <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+                <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+                <a href="#skills" data-i18n="nav.skills">Habilidades</a>
+                <a href="#education" data-i18n="nav.education">Educación</a>
+                <a href="#contact" data-i18n="nav.contact">Contacto</a>
+                <a href="cv/Hector-Somer-CV.pdf" target="_blank" class="nav-cv-btn" data-i18n="nav.cv">Descargar CV</a>
+                <button id="langToggle" class="lang-toggle" aria-label="Switch language">
+                    <span id="langToggleLabel">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
     <main>
         <!-- Hero Section -->
-        <section class="hero container">
+        <section id="top" class="hero container">
             <div class="profile-container">
                 <img src="yo/image.png" alt="Héctor Somer" class="profile-img">
             </div>
             <h1>HÉCTOR SOMER</h1>
-            <p>Undergraduate in Software Engineering. Focused on Back-End development and Software Architecture.
-                Passionate about Java, Rust, and building scalable APIs.</p>
+            <p class="hero-role" data-i18n="hero.role">Estudiante de Ingeniería en Software · Desarrollador Backend</p>
+            <p class="hero-tagline" data-i18n="hero.tagline">Enfocado en desarrollo backend y arquitectura de
+                software. Apasionado por Java, Rust y la construcción de APIs escalables.</p>
             <div class="hero-actions">
-                <a href="#experience" class="btn btn-primary">Ver Experiencia</a>
+                <a href="#experience" class="btn btn-primary" data-i18n="hero.cta.experience">Ver Experiencia</a>
+                <a href="#projects" class="btn btn-outline" data-i18n="hero.cta.projects">Ver Proyectos</a>
                 <a href="https://github.com/Somer-H" target="_blank" class="btn btn-outline">GitHub</a>
-                <a href="https://www.linkedin.com/in/hector-emilio-somer-vel%C3%A1zquez-22a463333" target="_blank"
-                    class="btn btn-outline">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/somerss1408" target="_blank" class="btn btn-outline">LinkedIn</a>
+            </div>
+        </section>
+
+        <!-- Facts strip -->
+        <section class="facts-strip container">
+            <div class="fact-item glass">
+                <span class="fact-icon">🎓</span>
+                <span data-i18n="facts.grad">9.º cuatrimestre · Graduación dic. 2026</span>
+            </div>
+            <div class="fact-item glass">
+                <span class="fact-icon">💼</span>
+                <span data-i18n="facts.role">Software Developer en Realhost (Remoto)</span>
+            </div>
+            <div class="fact-item glass">
+                <span class="fact-icon">🧩</span>
+                <span data-i18n="facts.projects">6 proyectos reales</span>
+            </div>
+            <div class="fact-item glass">
+                <span class="fact-icon">🌎</span>
+                <span data-i18n="facts.remote">Abierto a roles remotos</span>
             </div>
         </section>
 
         <!-- Experience Section -->
         <section id="experience" class="container">
-            <h2 class="section-title">Experiencia Profesional</h2>
-            <div class="grid experience-grid">
+            <h2 class="section-title" data-i18n="section.experience">Experiencia Profesional</h2>
+            <div class="timeline">
                 <!-- Realhost -->
-                <div class="exp-card glass">
-                    <div class="exp-header">
-                        <div class="exp-info">
-                            <h3>Realhost</h3>
-                            <span>Software Developer</span>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="exp-card glass">
+                        <div class="exp-header">
+                            <div class="exp-info">
+                                <h3>Realhost</h3>
+                                <span data-i18n="exp.realhost.role">Desarrollador de Software</span>
+                                <div class="exp-meta" data-i18n="exp.realhost.meta">Monterrey, Nuevo León, MX
+                                    (Remoto)</div>
+                            </div>
+                            <div class="company-logo">
+                                <img src="empresas/realhost.png" alt="Realhost Logo">
+                            </div>
                         </div>
-                        <div class="company-logo">
-                            <img src="empresas/realhost.png" alt="Realhost Logo">
+                        <div class="exp-date" data-i18n="exp.realhost.date">Octubre 2025 — Actualidad</div>
+                        <div class="exp-content">
+                            <ul>
+                                <li data-i18n="exp.realhost.b1">Diseño y mantenimiento de 20+ sistemas ERP de clientes
+                                    usando PHP, garantizando estabilidad y aplicando buenas prácticas de código.</li>
+                                <li data-i18n="exp.realhost.b2">Trabajo con entornos de desarrollo y pruebas en
+                                    contenedores con Docker, eliminando inconsistencias de entorno y reduciendo
+                                    tiempos de respuesta.</li>
+                                <li data-i18n="exp.realhost.b3">Implementación de procesamiento directo (STP) con
+                                    Laravel, Vite y Tailwind CSS, minimizando errores de captura manual.</li>
+                                <li data-i18n="exp.realhost.b4">Desarrollo y mantenimiento de portales de autoservicio
+                                    para clientes de alto impacto.</li>
+                                <li data-i18n="exp.realhost.b5">Pruebas de estrés de base de datos con Sysbench en un
+                                    proyecto liderado de principio a fin.</li>
+                                <li data-i18n="exp.realhost.b6">Construcción de servidores MCP (Model Context
+                                    Protocol) en Python, conectando sistemas internos con herramientas de agentes de
+                                    IA.</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="exp-date">Octubre 2025 — Actualidad</div>
-                    <div class="exp-content">
-                        <ul>
-                            <li>Desarrollo de software full-stack con enfoque en robustez y escalabilidad.</li>
-                            <li>Colaboración en la implementación de nuevas funcionalidades.</li>
-                        </ul>
                     </div>
                 </div>
 
-                <!-- Life Agent AI -->
-                <div class="exp-card glass">
-                    <div class="exp-header">
-                        <div class="exp-info">
-                            <h3>Life Agent</h3>
-                            <span>Backend Developer</span>
+                <!-- Life Agent -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="exp-card glass">
+                        <div class="exp-header">
+                            <div class="exp-info">
+                                <h3>Life Agent</h3>
+                                <span data-i18n="exp.lifeagent.role">Desarrollador Backend (concurrente con
+                                    Realhost)</span>
+                                <div class="exp-meta" data-i18n="exp.lifeagent.meta">Ciudad de México, MX (Remoto)
+                                </div>
+                            </div>
+                            <div class="company-logo">
+                                <img src="empresas/life_agent.png" alt="Life Agent Logo">
+                            </div>
                         </div>
-                        <div class="company-logo">
-                            <img src="empresas/life_agent.png" alt="Life Agent Logo">
+                        <div class="exp-date" data-i18n="exp.lifeagent.date">Octubre 2025 — Abril 2026</div>
+                        <div class="exp-content">
+                            <ul>
+                                <li data-i18n="exp.lifeagent.b1">Colaboración en 3 APIs REST de alto rendimiento con
+                                    Java, Spring Boot y Maven, con arquitectura por capas.</li>
+                                <li data-i18n="exp.lifeagent.b2">Gestión de migraciones de esquema y control de
+                                    versiones con Flyway y MySQL, sin pérdida de datos en producción.</li>
+                                <li data-i18n="exp.lifeagent.b3">Integración de Firebase para sincronización de datos
+                                    en tiempo real y autenticación segura.</li>
+                                <li data-i18n="exp.lifeagent.b4">Uso de Google Cloud Storage para almacenamiento
+                                    seguro y automatizado de archivos.</li>
+                                <li data-i18n="exp.lifeagent.b5">Pruebas automatizadas por API con JUnit 5, Mockito,
+                                    MockMvc y AssertJ.</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="exp-date">Octubre — Diciembre 2024 (3 meses)</div>
-                    <div class="exp-content">
-                        <ul>
-                            <li>Desarrollo backend especializado en Java y Spring Boot.</li>
-                            <li>Diseño de arquitecturas por capas para microservicios.</li>
-                            <li>Optimización de bases de datos y endpoints de alto rendimiento.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Agrowatch -->
-                <div class="exp-card glass">
-                    <div class="exp-header">
-                        <div class="exp-info">
-                            <h3>Agrowatch (Proyecto Universitario)</h3>
-                            <span>Lead Backend Developer</span>
-                        </div>
-                    </div>
-                    <div class="exp-date">Marzo — Abril 2025</div>
-                    <div class="exp-content">
-                        <ul>
-                            <li>Desarrollo de servidor WebSocket en Go para comunicación en tiempo real.</li>
-                            <li>Implementación de colas de mensajes con RabbitMQ para tareas asíncronas.</li>
-                            <li>Diseño de base de datos MySQL relacional con esquemas complejos.</li>
-                            <li>Creación de APIs con Gin (Go) e integración con el frontend.</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -97,41 +150,150 @@
 
         <!-- Projects Section -->
         <section id="projects" class="container">
-            <h2 class="section-title">Proyectos Destacados</h2>
+            <h2 class="section-title" data-i18n="section.projects">Proyectos Destacados</h2>
             <div class="grid project-grid">
+                <!-- SIGEAN -->
+                <div class="exp-card glass project-card">
+                    <div class="project-icon">🎓</div>
+                    <h3>SIGEAN</h3>
+                    <p class="project-sub" data-i18n="proj.sigean.sub">Plataforma de gestión educativa inclusiva ·
+                        Proyecto actual de estadía</p>
+                    <div class="project-date" data-i18n="proj.sigean.date">Oct. 2026 — Actualidad</div>
+                    <p data-i18n="proj.sigean.desc">API REST con Spring Boot 4.1 y Java 21 para una plataforma de
+                        seguimiento de estudiantes con necesidades especiales en educación secundaria, con
+                        arquitectura hexagonal por feature.</p>
+                    <ul class="project-bullets">
+                        <li data-i18n="proj.sigean.b1">Autenticación JWT con control de acceso por rol para 4 tipos
+                            de usuario.</li>
+                        <li data-i18n="proj.sigean.b2">Modelado de un esquema relacional de 16+ tablas con
+                            migraciones gestionadas por Flyway.</li>
+                        <li data-i18n="proj.sigean.b3">Documentación de la API con Swagger/OpenAPI y mapeo
+                            DTO-entidad con MapStruct.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag">JPA</span>
+                        <span class="project-tag">Flyway</span>
+                        <span class="project-tag">Swagger</span>
+                    </div>
+                </div>
+
+                <!-- LAMBI -->
+                <div class="exp-card glass project-card">
+                    <div class="project-icon">🛒</div>
+                    <h3>LAMBI</h3>
+                    <p class="project-sub" data-i18n="proj.lambi.sub">Plataforma de marketplace · Proyecto en equipo
+                        (3 personas)</p>
+                    <div class="project-date" data-i18n="proj.lambi.date">Nov. 2024 — en reconstrucción</div>
+                    <p data-i18n="proj.lambi.desc">Marketplace multi-vendedor construido con FastAPI y SQLAlchemy.
+                        Lideré al equipo como project manager y arquitecto de software.</p>
+                    <ul class="project-bullets">
+                        <li data-i18n="proj.lambi.b1">Definición de la arquitectura backend liderando un equipo de 3
+                            personas.</li>
+                        <li data-i18n="proj.lambi.b2">Construcción de la API REST en Python con autenticación JWT y
+                            hashing de contraseñas con bcrypt.</li>
+                        <li data-i18n="proj.lambi.b3">Diseño de routers para flujos de comprador, vendedor, producto,
+                            stand y ventas.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">FastAPI</span>
+                        <span class="project-tag">SQLAlchemy</span>
+                        <span class="project-tag">JWT</span>
+                    </div>
+                    <a href="https://github.com/Somer-H/API_LAMBI" target="_blank" class="project-link">
+                        <span data-i18n="proj.link.repo">Ver repositorio</span> →
+                    </a>
+                </div>
+
+                <!-- AprendIA -->
+                <div class="exp-card glass project-card">
+                    <div class="project-icon">🤟</div>
+                    <h3>AprendIA</h3>
+                    <p class="project-sub" data-i18n="proj.aprendia.sub">App móvil de aprendizaje accesible ·
+                        Proyecto patrocinado por la universidad (no es proyecto de cuatrimestre)</p>
+                    <div class="project-date" data-i18n="proj.aprendia.date">Jun. — Sep. 2026</div>
+                    <p data-i18n="proj.aprendia.desc">App móvil para que personas sordomudas aprendan a escribir.
+                        Equipo multidisciplinario de 7 personas (2 backend, 3 frontend, 2 asesores).</p>
+                    <ul class="project-bullets">
+                        <li data-i18n="proj.aprendia.b1">Backend de microservicios (API, servicio core y gateway) en
+                            Spring Boot/Java 21.</li>
+                        <li data-i18n="proj.aprendia.b2">Endpoints CRUD para catálogos y gestión de roles.</li>
+                        <li data-i18n="proj.aprendia.b3">Refactorización de entidades/DTOs: migración de @Data a
+                            @Getter/@Setter y conversión de todos los DTOs a Java records.</li>
+                        <li data-i18n="proj.aprendia.b4">Contenerización con Docker y Docker Compose (multi-stage),
+                            usando PostgreSQL con la extensión pgvector.</li>
+                        <li data-i18n="proj.aprendia.b5">Autenticación JWT, Spring Security y monitoreo de salud con
+                            Spring Actuator.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag">Docker</span>
+                        <span class="project-tag">PostgreSQL</span>
+                        <span class="project-tag">pgvector</span>
+                    </div>
+                    <a href="https://github.com/ICHEJA-PROJECT" target="_blank" class="project-link">
+                        <span data-i18n="proj.link.org">Ver organización</span> →
+                    </a>
+                </div>
+
                 <!-- Agrowatch -->
                 <div class="exp-card glass project-card">
+                    <div class="project-icon">🌱</div>
                     <h3>Agrowatch</h3>
-                    <p>Plataforma de monitoreo agrícola en tiempo real. Implementé la comunicación bidireccional
-                        mediante WebSockets y gestioné procesos asíncronos para el procesamiento de datos de sensores.
-                    </p>
+                    <p class="project-sub" data-i18n="proj.agrowatch.sub">Monitoreo agrícola con IoT · Proyecto en
+                        equipo (3 personas)</p>
+                    <div class="project-date" data-i18n="proj.agrowatch.date">2025</div>
+                    <p data-i18n="proj.agrowatch.desc">Plataforma de monitoreo de cultivos en tiempo real usando
+                        sensores IoT, construida como parte de un equipo de 3 personas.</p>
+                    <ul class="project-bullets">
+                        <li data-i18n="proj.agrowatch.b1">Microservicios en Go para gestión de usuarios y
+                            comunicación con dispositivos, incluyendo registro, autenticación y acceso por rol.</li>
+                        <li data-i18n="proj.agrowatch.b2">Servicio de inicialización de dispositivos ESP32 en C++
+                            para dar de alta sensores IoT.</li>
+                        <li data-i18n="proj.agrowatch.b3">Despliegue de los servicios backend a producción.</li>
+                    </ul>
                     <div class="project-tags">
                         <span class="project-tag">Go</span>
-                        <span class="project-tag">Gin</span>
-                        <span class="project-tag">RabbitMQ</span>
-                        <span class="project-tag">MySQL</span>
-                        <span class="project-tag">WebSockets</span>
+                        <span class="project-tag">C++</span>
+                        <span class="project-tag">ESP32</span>
+                        <span class="project-tag">IoT</span>
                     </div>
+                    <a href="https://github.com/Somer-H/cilantros_users" target="_blank" class="project-link">
+                        <span data-i18n="proj.link.repo">Ver repositorio</span> →
+                    </a>
                 </div>
 
                 <!-- Secret Event -->
                 <div class="exp-card glass project-card">
+                    <div class="project-icon">🔒</div>
                     <h3>Secret Event</h3>
-                    <p>Desarrollo de una DApp para denuncias anónimas. Programé smart contracts enfocados en la
-                        privacidad de los datos y colaboré en la infraestructura blockchain usando tecnologías Web3.</p>
+                    <p class="project-sub" data-i18n="proj.secretevent.sub">DApp de denuncias anónimas · 2.º lugar,
+                        Vara Side Hackathon</p>
+                    <div class="project-date" data-i18n="proj.secretevent.date">Octubre 2024</div>
+                    <p data-i18n="proj.secretevent.desc">DApp Web3 para denuncias anónimas y seguras de casos
+                        sensibles, con smart contracts en Rust sobre la red Vara.</p>
+                    <ul class="project-bullets">
+                        <li data-i18n="proj.secretevent.b1">Programación de smart contracts en Rust sobre la
+                            blockchain de Vara Network.</li>
+                    </ul>
                     <div class="project-tags">
                         <span class="project-tag">Rust</span>
                         <span class="project-tag">Vara Network</span>
                         <span class="project-tag">Web3</span>
-                        <span class="project-tag">Blockchain</span>
                     </div>
                 </div>
 
                 <!-- Carnitas Noyola -->
                 <div class="exp-card glass project-card">
+                    <div class="project-icon">🍖</div>
                     <h3>Carnitas Noyola</h3>
-                    <p>Sistema de gestión de ventas y pedidos. Diseñé una base de datos robusta con esquemas complejos
-                        para manejar múltiples relaciones y optimizar las consultas de pedidos.</p>
+                    <p class="project-sub" data-i18n="proj.carnitas.sub">Sistema de ventas y pedidos</p>
+                    <div class="project-date" data-i18n="proj.carnitas.date">Mayo — Julio 2024</div>
+                    <p data-i18n="proj.carnitas.desc">Sistema de gestión de ventas y pedidos. Diseñé una base de datos
+                        robusta con esquemas complejos para optimizar las consultas de pedidos.</p>
                     <div class="project-tags">
                         <span class="project-tag">TypeScript</span>
                         <span class="project-tag">Express</span>
@@ -144,11 +306,11 @@
 
         <!-- Skills Section -->
         <section id="skills" class="container">
-            <h2 class="section-title">Habilidades Técnicas</h2>
+            <h2 class="section-title" data-i18n="section.skills">Habilidades Técnicas</h2>
             <div class="skills-container">
                 <!-- Languages -->
                 <div class="skill-row">
-                    <h3>Lenguajes</h3>
+                    <h3 data-i18n="skills.languages">Lenguajes</h3>
                     <div class="skill-items">
                         <div class="skill-card">
                             <div class="icon-wrapper"><img src="languages/java.png" alt="Java"></div><span>Java</span>
@@ -168,6 +330,10 @@
                             <span>TypeScript</span>
                         </div>
                         <div class="skill-card">
+                            <div class="icon-wrapper"><img src="languages/javascript.png" alt="JavaScript"></div>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-card">
                             <div class="icon-wrapper"><img src="languages/php.png" alt="PHP"></div><span>PHP</span>
                         </div>
                         <div class="skill-card">
@@ -176,12 +342,18 @@
                         <div class="skill-card">
                             <div class="icon-wrapper"><img src="languages/sql.png" alt="SQL"></div><span>SQL</span>
                         </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Kt</div><span>Kotlin</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Dt</div><span>Dart</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Frameworks -->
                 <div class="skill-row">
-                    <h3>Frameworks</h3>
+                    <h3 data-i18n="skills.frameworks">Frameworks</h3>
                     <div class="skill-items">
                         <div class="skill-card">
                             <div class="icon-wrapper"><img src="frameworks/springboot.png" alt="Spring Boot"></div>
@@ -207,12 +379,39 @@
                             <div class="icon-wrapper"><img src="frameworks/flask.png" alt="Flask"></div>
                             <span>Flask</span>
                         </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Dj</div><span>Django</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-row">
+                    <h3 data-i18n="skills.databases">Bases de Datos</h3>
+                    <div class="skill-items">
+                        <div class="skill-card">
+                            <div class="icon-wrapper"><img src="tecnologies/mysql.png" alt="MySQL"></div>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper"><img src="tecnologies/mariadb.png" alt="MariaDB"></div>
+                            <span>MariaDB</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Pg</div><span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Fl</div><span>Flyway</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Re</div><span>Redis</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Technologies -->
                 <div class="skill-row">
-                    <h3>Tecnologías y Herramientas</h3>
+                    <h3 data-i18n="skills.tools">Tecnologías y Herramientas</h3>
                     <div class="skill-items">
                         <div class="skill-card">
                             <div class="icon-wrapper"><img src="tecnologies/docker.png" alt="Docker"></div>
@@ -223,12 +422,37 @@
                             <span>AWS</span>
                         </div>
                         <div class="skill-card">
-                            <div class="icon-wrapper"><img src="tecnologies/mysql.png" alt="MySQL"></div>
-                            <span>MySQL</span>
+                            <div class="icon-wrapper"><img src="tecnologies/firebase.png" alt="Firebase"></div>
+                            <span>Firebase</span>
                         </div>
                         <div class="skill-card">
-                            <div class="icon-wrapper"><img src="tecnologies/mariadb.png" alt="MariaDB"></div>
-                            <span>MariaDB</span>
+                            <div class="icon-wrapper monogram">Gc</div><span>Google Cloud Storage</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Rb</div><span>RabbitMQ</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Vr</div><span>Vara Network</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Gt</div><span>Git</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper"><img src="tecnologies/github.png" alt="GitHub"></div>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Gl</div><span>GitLab</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">Mv</div><span>Maven</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper monogram">SA</div><span>SQLAlchemy</span>
+                        </div>
+                        <div class="skill-card">
+                            <div class="icon-wrapper"><img src="tecnologies/ubuntu.png" alt="Ubuntu"></div>
+                            <span>Ubuntu</span>
                         </div>
                         <div class="skill-card">
                             <div class="icon-wrapper"><img src="tecnologies/nodejs.png" alt="Node.js"></div>
@@ -237,13 +461,15 @@
                         <div class="skill-card">
                             <div class="icon-wrapper"><img src="tecnologies/bun.png" alt="Bun"></div><span>Bun</span>
                         </div>
-                        <div class="skill-card">
-                            <div class="icon-wrapper"><img src="tecnologies/linux.png" alt="Linux"></div>
-                            <span>Linux</span>
-                        </div>
-                        <div class="skill-card">
-                            <div class="icon-wrapper"><img src="tecnologies/github.png" alt="GitHub"></div>
-                            <span>GitHub</span>
+                    </div>
+                </div>
+
+                <!-- Languages Spoken -->
+                <div class="skill-row">
+                    <h3 data-i18n="skills.spoken">Idiomas</h3>
+                    <div class="skill-items">
+                        <div class="skill-card wide">
+                            <span data-i18n="skills.spoken.value">Español (nativo) · Inglés (B1)</span>
                         </div>
                     </div>
                 </div>
@@ -252,24 +478,26 @@
 
         <!-- Education & Badges -->
         <section id="education" class="container">
-            <h2 class="section-title">Educación y Certificaciones</h2>
-            <div class="grid">
-                <div class="glass" style="padding: 2.5rem;">
-                    <h3>Software Engineering</h3>
-                    <p style="color: var(--accent-color); margin-bottom: 1rem;">Universidad Politécnica de Chiapas (2023
-                        — 2026)</p>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.5rem; color: var(--text-secondary);">Currently in the 8th quarter of
-                            a 9-quarter program.</li>
-                    </ul>
+            <h2 class="section-title" data-i18n="section.education">Educación y Certificaciones</h2>
+            <div class="grid education-grid">
+                <div class="glass edu-card">
+                    <h3 data-i18n="edu.degree">Ingeniería en Software</h3>
+                    <p class="edu-school">Universidad Politécnica de Chiapas (2023 — 2026)</p>
+                    <p class="edu-line" data-i18n="edu.status">Materias concluidas — actualmente en estadía
+                        profesional obligatoria; graduación estimada: diciembre 2026.</p>
+                    <p class="edu-gpa" data-i18n="edu.gpa">Promedio: 9.0/10 (≈3.7/4.0 GPA)</p>
                 </div>
-                <div class="glass" style="padding: 2.5rem;">
-                    <h3>AWS Academy Badges</h3>
-                    <div class="skill-items" style="margin-top: 1.5rem;">
-                        <div class="skill-card"><span>Cloud Foundations</span></div>
-                        <div class="skill-card"><span>Cloud Operations</span></div>
-                        <div class="skill-card"><span>Cloud Developing</span></div>
-                        <div class="skill-card"><span>Cloud Architecting</span></div>
+                <div class="glass edu-card">
+                    <h3 data-i18n="edu.certs.title">Certificaciones</h3>
+                    <div class="cert-item">
+                        <strong>AWS Academy Graduate</strong>
+                        <p data-i18n="edu.cert.aws.sub">Cloud Foundations · Cloud Operations · Cloud Developing ·
+                            Cloud Architecting</p>
+                    </div>
+                    <div class="cert-item">
+                        <strong data-i18n="edu.cert.cisco">Cisco Networking & Fundamentos de SO</strong>
+                        <p data-i18n="edu.cert.cisco.sub">Fundamentos de Redes · Fundamentos de Sistemas Operativos
+                        </p>
                     </div>
                 </div>
             </div>
@@ -277,41 +505,48 @@
 
         <!-- Soft Skills Section -->
         <section id="soft-skills" class="container">
-            <h2 class="section-title">Habilidades Interpersonales</h2>
+            <h2 class="section-title" data-i18n="section.softskills">Habilidades Interpersonales</h2>
             <div class="soft-skills-grid">
                 <div class="soft-skill-card glass">
-                    <h3>Liderazgo</h3>
+                    <span class="soft-icon">🧭</span>
+                    <h3 data-i18n="soft.leadership">Liderazgo</h3>
                 </div>
                 <div class="soft-skill-card glass">
-                    <h3>Trabajo en Equipo</h3>
+                    <span class="soft-icon">🤝</span>
+                    <h3 data-i18n="soft.teamwork">Trabajo en Equipo</h3>
                 </div>
                 <div class="soft-skill-card glass">
-                    <h3>Pensamiento Crítico</h3>
+                    <span class="soft-icon">🧠</span>
+                    <h3 data-i18n="soft.critical">Pensamiento Crítico</h3>
                 </div>
                 <div class="soft-skill-card glass">
-                    <h3>Adaptabilidad</h3>
+                    <span class="soft-icon">🔄</span>
+                    <h3 data-i18n="soft.adapt">Adaptabilidad</h3>
                 </div>
                 <div class="soft-skill-card glass">
-                    <h3>Atención al Detalle</h3>
+                    <span class="soft-icon">🔍</span>
+                    <h3 data-i18n="soft.detail">Atención al Detalle</h3>
                 </div>
                 <div class="soft-skill-card glass">
-                    <h3>Aprendizaje Continuo</h3>
+                    <span class="soft-icon">📚</span>
+                    <h3 data-i18n="soft.learning">Aprendizaje Continuo</h3>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="container contact-section">
-            <h2 class="section-title">Contactos</h2>
-            <p style="color: var(--text-secondary); margin-top: -1.5rem;">Estoy abierto a nuevas oportunidades y colaboraciones. ¡Ponte en contacto conmigo!</p>
+            <h2 class="section-title" data-i18n="section.contact">Contactos</h2>
+            <p class="contact-intro" data-i18n="contact.intro">Estoy abierto a nuevas oportunidades y
+                colaboraciones. ¡Ponte en contacto conmigo!</p>
             <div class="contact-grid">
                 <a href="mailto:hsomdev19@gmail.com" class="contact-item glass">
                     <span>Email</span>
                     <p>hsomdev19@gmail.com</p>
                 </a>
-                <a href="https://www.linkedin.com/in/hector-emilio-somer-velázquez-22a463333" target="_blank" class="contact-item glass">
+                <a href="https://www.linkedin.com/in/somerss1408" target="_blank" class="contact-item glass">
                     <span>LinkedIn</span>
-                    <p>hector-emilio-somer</p>
+                    <p>somerss1408</p>
                 </a>
                 <a href="https://github.com/Somer-H" target="_blank" class="contact-item glass">
                     <span>GitHub</span>
@@ -324,31 +559,14 @@
     <footer class="container">
         <div class="social-links">
             <a href="https://github.com/Somer-H" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/hector-emilio-somer-vel%C3%A1zquez-22a463333"
-                target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/somerss1408" target="_blank">LinkedIn</a>
             <a href="tel:+529616325591">+52 961 632 5591</a>
         </div>
-        <p style="color: var(--text-secondary); font-size: 0.9rem;">&copy; 2026 Héctor Somer V.</p>
+        <p class="footer-rights" data-i18n="footer.rights">&copy; 2026 Héctor Somer V.</p>
     </footer>
 
-    <script>
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
