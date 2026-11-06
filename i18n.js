@@ -131,7 +131,7 @@ const translations = {
     "proj.carnitas.more": { es: "Un sistema de gestión de ventas y pedidos para un negocio real de carnitas, entre mayo y julio de 2024. Mi enfoque principal fue el diseño de la base de datos: un esquema con relaciones más complejas de lo usual para optimizar las consultas de pedidos a medida que el negocio creciera.", en: "A sales and order management system for a real carnitas business, between May and July 2024. My main focus was the database design: a schema with more complex relationships than usual, built to keep order queries fast as the business grew." },
 
     "github.title": { es: "Actividad en GitHub", en: "GitHub Activity" },
-    "github.sub": { es: "Calendario de contribuciones en tiempo real", en: "Live contribution calendar" }
+    "github.sub": { es: "Una serpiente se come mis contribuciones reales de GitHub", en: "A snake eating my real GitHub contributions" }
 };
 
 function detectInitialLang() {
