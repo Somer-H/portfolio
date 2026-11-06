@@ -109,7 +109,29 @@ const translations = {
     "soft.learning": { es: "Aprendizaje Continuo", en: "Continuous Learning" },
 
     "contact.intro": { es: "Estoy abierto a nuevas oportunidades y colaboraciones. ¡Ponte en contacto conmigo!", en: "I'm open to new opportunities and collaborations. Get in touch!" },
-    "footer.rights": { es: "© 2026 Héctor Somer V.", en: "© 2026 Héctor Somer V." }
+    "footer.rights": { es: "© 2026 Héctor Somer V.", en: "© 2026 Héctor Somer V." },
+
+    "now.label": { es: "Ahora mismo", en: "Right now" },
+    "now.text": { es: "Construyendo SIGEAN, una plataforma educativa con Spring Boot 4.1, durante mi estadía profesional.", en: "Building SIGEAN, an education platform with Spring Boot 4.1, during my professional internship." },
+    "now.link": { es: "Ver proyecto", en: "View project" },
+
+    "proj.viewmore": { es: "Ver más detalles", en: "View more details" },
+    "proj.modal.close": { es: "Cerrar", en: "Close" },
+
+    "proj.sigean.more": { es: "Como proyecto actual de mi estadía profesional, diseñé este sistema desde cero para el seguimiento de alumnos con necesidades especiales en una escuela secundaria. La arquitectura hexagonal está organizada por feature (cada una con su propio domain/application/infrastructure), con 'acronyms' como feature de referencia para el resto del equipo. El esquema cubre 16 tablas (alumnos, tutores, docentes, personal técnico, grupos, condiciones especiales, seguimiento, citas con psicología, etc.), con Flyway versionando cada migración. En desarrollo uso una base H2 en archivo y en producción PostgreSQL, controlado por perfiles de Spring. Los tokens JWT expiran en 1 hora, y el acceso a cada endpoint se decide por rol (por ejemplo, solo Servicios Académicos puede crear usuarios).", en: "As my current professional-internship project, I designed this system from scratch to track students with special needs in a secondary school. The hexagonal architecture is organized per feature (each with its own domain/application/infrastructure), with 'acronyms' serving as the reference feature for the rest of the team. The schema covers 16 tables (students, guardians, teachers, technical staff, groups, special conditions, progress tracking, psychology appointments, etc.), with Flyway versioning every migration. Development uses a file-based H2 database and production uses PostgreSQL, switched via Spring profiles. JWT tokens expire after 1 hour, and access to each endpoint is role-gated (for example, only Academic Services can create users)." },
+
+    "proj.lambi.more": { es: "LAMBI fue de los primeros proyectos grandes que construí, durante el tercer/cuarto cuatrimestre de la carrera. Diseñé la arquitectura del backend como project manager y arquitecto de software para un equipo de 3 personas, con routers separados para compradores, vendedores, productos, puestos (stands) y ventas. Ahora mismo estamos retomando el proyecto para reconstruirlo con mejores prácticas de las que teníamos en ese entonces.", en: "LAMBI was one of the first large projects I built, during the 3rd/4th quarter of my degree. I designed the backend architecture as project manager and software architect for a 3-person team, with separate routers for buyers, sellers, products, stands, and sales. We're currently revisiting the project to rebuild it with better practices than we had back then." },
+
+    "proj.aprendia.more": { es: "AprendIA es un proyecto patrocinado por la universidad (ICHEJA), no una tarea de cuatrimestre, con un equipo multidisciplinario de 7 personas: 2 desarrolladores backend, 3 de frontend y 2 asesores docentes. Mi trabajo incluyó los endpoints CRUD de catálogos y roles, y una refactorización del código para migrar de Lombok @Data a @Getter/@Setter explícitos y convertir todos los DTOs a Java records. También integré Cloudinary para el manejo de imágenes de la app. El backend corre en contenedores Docker multi-stage junto con PostgreSQL con la extensión pgvector.", en: "AprendIA is a university-sponsored project (ICHEJA), not coursework, with a multidisciplinary team of 7: 2 backend developers, 3 frontend developers, and 2 faculty advisors. My work included the CRUD endpoints for catalogs and roles, and a refactor migrating the codebase from Lombok's @Data to explicit @Getter/@Setter and converting all DTOs to Java records. I also integrated Cloudinary for the app's image handling. The backend runs in multi-stage Docker containers alongside PostgreSQL with the pgvector extension." },
+
+    "proj.agrowatch.more": { es: "Agrowatch es una plataforma de monitoreo de cultivos de cilantro con sensores IoT, desarrollada con un equipo de 3 personas durante la carrera. Construí los microservicios en Go para gestión de usuarios y comunicación con dispositivos (registro, autenticación, acceso por rol), además de un servicio en C++ para inicializar los dispositivos ESP32 que envían los datos de los sensores. El sistema se comunica con los dispositivos a través de una capa de mensajería asíncrona (RabbitMQ/AMQP) construida por otro miembro del equipo. Yo también me encargué del despliegue del backend a producción.", en: "Agrowatch is a cilantro-crop monitoring platform using IoT sensors, built with a 3-person team during my degree. I built the Go microservices for user management and device communication (registration, authentication, role-based access), plus a C++ service to initialize the ESP32 devices that send sensor data. The system talks to the devices through an asynchronous messaging layer (RabbitMQ/AMQP) built by another team member. I also handled deploying the backend to production." },
+
+    "proj.secretevent.more": { es: "Secret Event nació en el Vara Side Hackathon de Chiapas (octubre 2024), donde gané el 2.º lugar. La idea era una DApp para que cualquiera pudiera reportar casos sensibles de forma anónima y segura, sin exponer su identidad. Programé los smart contracts en Rust sobre la blockchain de Vara Network, enfocados en mantener la privacidad de quien reporta.", en: "Secret Event came out of the Vara Side Hackathon in Chiapas (October 2024), where it won 2nd place. The idea was a DApp that lets anyone report sensitive cases anonymously and safely, without exposing their identity. I programmed the smart contracts in Rust on the Vara Network blockchain, focused on protecting the reporter's privacy." },
+
+    "proj.carnitas.more": { es: "Un sistema de gestión de ventas y pedidos para un negocio real de carnitas, entre mayo y julio de 2024. Mi enfoque principal fue el diseño de la base de datos: un esquema con relaciones más complejas de lo usual para optimizar las consultas de pedidos a medida que el negocio creciera.", en: "A sales and order management system for a real carnitas business, between May and July 2024. My main focus was the database design: a schema with more complex relationships than usual, built to keep order queries fast as the business grew." },
+
+    "github.title": { es: "Actividad en GitHub", en: "GitHub Activity" },
+    "github.sub": { es: "Calendario de contribuciones en tiempo real", en: "Live contribution calendar" }
 };
 
 function detectInitialLang() {
@@ -131,6 +153,7 @@ function applyLang(lang) {
     if (toggleLabel) toggleLabel.textContent = lang === "es" ? "EN" : "ES";
     localStorage.setItem("lang", lang);
     window.currentLang = lang;
+    if (window.updateNavIndicator) window.updateNavIndicator();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

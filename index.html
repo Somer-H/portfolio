@@ -7,10 +7,34 @@
     <title>Héctor Somer | Software Engineer Portfolio</title>
     <meta name="description"
         content="Portfolio of Héctor Somer, Backend Developer specializing in Java, Spring Boot, and Software Architecture.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://somer-h.github.io/portfolio/">
+    <meta property="og:title" content="Héctor Somer | Backend Developer">
+    <meta property="og:description"
+        content="Backend Developer specializing in Java, Spring Boot, and Software Architecture. Java, Rust, Go &amp; scalable APIs.">
+    <meta property="og:image" content="https://somer-h.github.io/portfolio/social-preview.jpg">
+    <meta property="og:image:width" content="764">
+    <meta property="og:image:height" content="402">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Héctor Somer | Backend Developer">
+    <meta name="twitter:description"
+        content="Backend Developer specializing in Java, Spring Boot, and Software Architecture.">
+    <meta name="twitter:image" content="https://somer-h.github.io/portfolio/social-preview.jpg">
+
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div id="scrollProgress" class="scroll-progress"></div>
 
     <nav id="siteNav" class="site-nav">
         <div class="nav-inner container">
@@ -29,6 +53,7 @@
                 <button id="langToggle" class="lang-toggle" aria-label="Switch language">
                     <span id="langToggleLabel">EN</span>
                 </button>
+                <span id="navIndicator" class="nav-indicator"></span>
             </div>
         </div>
     </nav>
@@ -53,30 +78,41 @@
 
         <!-- Facts strip -->
         <section class="facts-strip container">
-            <div class="fact-item glass">
+            <div class="fact-item glass reveal-item">
                 <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.5 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></span>
                 <span data-i18n="facts.grad">9.º cuatrimestre · Graduación dic. 2026</span>
             </div>
-            <div class="fact-item glass">
+            <div class="fact-item glass reveal-item">
                 <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></span>
                 <span data-i18n="facts.role">Software Developer en Realhost (Remoto)</span>
             </div>
-            <div class="fact-item glass">
+            <div class="fact-item glass reveal-item">
                 <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
                 <span data-i18n="facts.projects">6 proyectos reales</span>
             </div>
-            <div class="fact-item glass">
+            <div class="fact-item glass reveal-item">
                 <span class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9Z"/></svg></span>
                 <span data-i18n="facts.remote">Abierto a roles remotos</span>
             </div>
         </section>
+
+        <!-- Now banner -->
+        <div class="now-banner container">
+            <a href="#projects" class="now-banner-inner glass">
+                <span class="now-dot"></span>
+                <span class="now-label" data-i18n="now.label">Ahora mismo</span>
+                <span class="now-text" data-i18n="now.text">Construyendo SIGEAN, una plataforma educativa con Spring
+                    Boot 4.1, durante mi estadía profesional.</span>
+                <span class="now-link" data-i18n="now.link">Ver proyecto</span>
+            </a>
+        </div>
 
         <!-- Experience Section -->
         <section id="experience" class="container">
             <h2 class="section-title" data-i18n="section.experience">Experiencia Profesional</h2>
             <div class="timeline">
                 <!-- Realhost -->
-                <div class="timeline-item">
+                <div class="timeline-item reveal-item">
                     <div class="timeline-dot"></div>
                     <div class="exp-card glass">
                         <div class="exp-header">
@@ -113,7 +149,7 @@
                 </div>
 
                 <!-- Life Agent -->
-                <div class="timeline-item">
+                <div class="timeline-item reveal-item">
                     <div class="timeline-dot"></div>
                     <div class="exp-card glass">
                         <div class="exp-header">
@@ -153,7 +189,7 @@
             <h2 class="section-title" data-i18n="section.projects">Proyectos Destacados</h2>
             <div class="grid project-grid">
                 <!-- SIGEAN -->
-                <div class="exp-card glass project-card">
+                <div class="exp-card glass project-card reveal-item">
                     <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.5 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></div>
                     <h3>SIGEAN</h3>
                     <p class="project-sub" data-i18n="proj.sigean.sub">Plataforma de gestión educativa inclusiva ·
@@ -177,10 +213,12 @@
                         <span class="project-tag">Flyway</span>
                         <span class="project-tag">Swagger</span>
                     </div>
+                    <button class="project-expand" data-project="sigean" data-i18n="proj.viewmore">Ver más
+                        detalles</button>
                 </div>
 
                 <!-- LAMBI -->
-                <div class="exp-card glass project-card">
+                <div class="exp-card glass project-card reveal-item">
                     <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="9" cy="20" r="1.3" fill="currentColor" stroke="none"/><circle cx="18" cy="20" r="1.3" fill="currentColor" stroke="none"/></svg></div>
                     <h3>LAMBI</h3>
                     <p class="project-sub" data-i18n="proj.lambi.sub">Plataforma de marketplace · Proyecto en equipo
@@ -202,13 +240,17 @@
                         <span class="project-tag">SQLAlchemy</span>
                         <span class="project-tag">JWT</span>
                     </div>
-                    <a href="https://github.com/Somer-H/API_LAMBI" target="_blank" class="project-link">
-                        <span data-i18n="proj.link.repo">Ver repositorio</span> →
-                    </a>
+                    <div class="project-footer">
+                        <a href="https://github.com/Somer-H/API_LAMBI" target="_blank" class="project-link">
+                            <span data-i18n="proj.link.repo">Ver repositorio</span> →
+                        </a>
+                        <button class="project-expand" data-project="lambi" data-i18n="proj.viewmore">Ver más
+                            detalles</button>
+                    </div>
                 </div>
 
                 <!-- AprendIA -->
-                <div class="exp-card glass project-card">
+                <div class="exp-card glass project-card reveal-item">
                     <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
                     <h3>AprendIA</h3>
                     <p class="project-sub" data-i18n="proj.aprendia.sub">App móvil de aprendizaje accesible ·
@@ -234,13 +276,17 @@
                         <span class="project-tag">PostgreSQL</span>
                         <span class="project-tag">pgvector</span>
                     </div>
-                    <a href="https://github.com/ICHEJA-PROJECT" target="_blank" class="project-link">
-                        <span data-i18n="proj.link.org">Ver organización</span> →
-                    </a>
+                    <div class="project-footer">
+                        <a href="https://github.com/ICHEJA-PROJECT" target="_blank" class="project-link">
+                            <span data-i18n="proj.link.org">Ver organización</span> →
+                        </a>
+                        <button class="project-expand" data-project="aprendia" data-i18n="proj.viewmore">Ver más
+                            detalles</button>
+                    </div>
                 </div>
 
                 <!-- Agrowatch -->
-                <div class="exp-card glass project-card">
+                <div class="exp-card glass project-card reveal-item">
                     <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c0-7 4-13 14-16 0 10-4 16-14 16Z"/><path d="M5 21c2-4 5-7 9-9"/></svg></div>
                     <h3>Agrowatch</h3>
                     <p class="project-sub" data-i18n="proj.agrowatch.sub">Monitoreo agrícola con IoT · Proyecto en
@@ -261,13 +307,17 @@
                         <span class="project-tag">ESP32</span>
                         <span class="project-tag">IoT</span>
                     </div>
-                    <a href="https://github.com/Somer-H/cilantros_users" target="_blank" class="project-link">
-                        <span data-i18n="proj.link.repo">Ver repositorio</span> →
-                    </a>
+                    <div class="project-footer">
+                        <a href="https://github.com/Somer-H/cilantros_users" target="_blank" class="project-link">
+                            <span data-i18n="proj.link.repo">Ver repositorio</span> →
+                        </a>
+                        <button class="project-expand" data-project="agrowatch" data-i18n="proj.viewmore">Ver más
+                            detalles</button>
+                    </div>
                 </div>
 
                 <!-- Secret Event -->
-                <div class="exp-card glass project-card">
+                <div class="exp-card glass project-card reveal-item">
                     <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="M9.5 12.5 11 14l3.5-3.5"/></svg></div>
                     <h3>Secret Event</h3>
                     <p class="project-sub" data-i18n="proj.secretevent.sub">DApp de denuncias anónimas · 2.º lugar,
@@ -284,10 +334,14 @@
                         <span class="project-tag">Vara Network</span>
                         <span class="project-tag">Web3</span>
                     </div>
+                    <div class="project-footer">
+                        <button class="project-expand" data-project="secretevent" data-i18n="proj.viewmore">Ver más
+                            detalles</button>
+                    </div>
                 </div>
 
                 <!-- Carnitas Noyola -->
-                <div class="exp-card glass project-card">
+                <div class="exp-card glass project-card reveal-item">
                     <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2Z"/><path d="M9 7h6"/><path d="M9 11h6"/></svg></div>
                     <h3>Carnitas Noyola</h3>
                     <p class="project-sub" data-i18n="proj.carnitas.sub">Sistema de ventas y pedidos</p>
@@ -300,7 +354,21 @@
                         <span class="project-tag">MySQL</span>
                         <span class="project-tag">Node.js</span>
                     </div>
+                    <div class="project-footer">
+                        <button class="project-expand" data-project="carnitas" data-i18n="proj.viewmore">Ver más
+                            detalles</button>
+                    </div>
                 </div>
+            </div>
+
+            <!-- GitHub Activity -->
+            <div class="github-activity glass">
+                <h3 data-i18n="github.title">Actividad en GitHub</h3>
+                <p data-i18n="github.sub">Calendario de contribuciones en tiempo real</p>
+                <a href="https://github.com/Somer-H" target="_blank" class="github-chart-link">
+                    <img src="https://ghchart.rshah.org/d4a373/Somer-H" alt="Héctor Somer's GitHub contribution chart"
+                        class="github-chart">
+                </a>
             </div>
         </section>
 
@@ -480,14 +548,14 @@
         <section id="education" class="container">
             <h2 class="section-title" data-i18n="section.education">Educación y Certificaciones</h2>
             <div class="grid education-grid">
-                <div class="glass edu-card">
+                <div class="glass edu-card reveal-item">
                     <h3 data-i18n="edu.degree">Ingeniería en Software</h3>
                     <p class="edu-school">Universidad Politécnica de Chiapas (2023 — 2026)</p>
                     <p class="edu-line" data-i18n="edu.status">Materias concluidas — actualmente en estadía
                         profesional obligatoria; graduación estimada: diciembre 2026.</p>
                     <p class="edu-gpa" data-i18n="edu.gpa">Promedio: 9.0/10 (≈3.7/4.0 GPA)</p>
                 </div>
-                <div class="glass edu-card">
+                <div class="glass edu-card reveal-item">
                     <h3 data-i18n="edu.certs.title">Certificaciones</h3>
                     <div class="cert-item">
                         <strong>AWS Academy Graduate</strong>
@@ -507,27 +575,27 @@
         <section id="soft-skills" class="container">
             <h2 class="section-title" data-i18n="section.softskills">Habilidades Interpersonales</h2>
             <div class="soft-skills-grid">
-                <div class="soft-skill-card glass">
+                <div class="soft-skill-card glass reveal-item">
                     <span class="soft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-6 2 2-6 6-2Z"/></svg></span>
                     <h3 data-i18n="soft.leadership">Liderazgo</h3>
                 </div>
-                <div class="soft-skill-card glass">
+                <div class="soft-skill-card glass reveal-item">
                     <span class="soft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.3"/><path d="M15.3 14a5 5 0 0 1 5.7 5"/></svg></span>
                     <h3 data-i18n="soft.teamwork">Trabajo en Equipo</h3>
                 </div>
-                <div class="soft-skill-card glass">
+                <div class="soft-skill-card glass reveal-item">
                     <span class="soft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.4.3.5.8.5 1.3V16h6v-.8c0-.5.1-1 .5-1.3A6 6 0 0 0 12 3Z"/></svg></span>
                     <h3 data-i18n="soft.critical">Pensamiento Crítico</h3>
                 </div>
-                <div class="soft-skill-card glass">
+                <div class="soft-skill-card glass reveal-item">
                     <span class="soft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></span>
                     <h3 data-i18n="soft.adapt">Adaptabilidad</h3>
                 </div>
-                <div class="soft-skill-card glass">
+                <div class="soft-skill-card glass reveal-item">
                     <span class="soft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></span>
                     <h3 data-i18n="soft.detail">Atención al Detalle</h3>
                 </div>
-                <div class="soft-skill-card glass">
+                <div class="soft-skill-card glass reveal-item">
                     <span class="soft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5c2-1 5-1 8 0v15c-3-1-6-1-8 0Z"/><path d="M20 5c-2-1-5-1-8 0v15c3-1 6-1 8 0Z"/></svg></span>
                     <h3 data-i18n="soft.learning">Aprendizaje Continuo</h3>
                 </div>
@@ -564,6 +632,27 @@
         </div>
         <p class="footer-rights" data-i18n="footer.rights">&copy; 2026 Héctor Somer V.</p>
     </footer>
+
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 19V5" />
+            <path d="M5 12l7-7 7 7" />
+        </svg>
+    </a>
+
+    <div id="projectModal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-box glass">
+            <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+            <div class="project-icon" id="modalIcon"></div>
+            <h3 id="modalTitle"></h3>
+            <p class="project-sub" id="modalSub"></p>
+            <div class="project-date" id="modalDate"></div>
+            <p id="modalBody"></p>
+            <div class="project-tags" id="modalTags"></div>
+            <a href="#" target="_blank" class="project-link" id="modalLink" style="display:none;"></a>
+        </div>
+    </div>
 
     <script src="i18n.js"></script>
     <script src="script.js"></script>
