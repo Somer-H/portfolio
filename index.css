@@ -37,7 +37,7 @@ h1, h2, h3 {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1440px;
     margin: 0 auto;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -465,7 +465,7 @@ main, footer {
 
 /* Sections */
 section {
-    padding: 6rem 0;
+    padding: 4.5rem 0;
 }
 
 .section-title {
@@ -703,7 +703,7 @@ footer {
 
 /* Projects Section */
 .project-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .project-card {
@@ -899,7 +899,7 @@ footer {
 /* Soft Skills & Contact */
 .soft-skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
@@ -1069,6 +1069,10 @@ section.visible {
     .nav-indicator {
         display: none;
     }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1080,6 +1084,12 @@ section.visible {
     .now-banner-inner { flex-direction: column; text-align: center; gap: 0.4rem; }
     .github-activity { padding: 1.75rem 1.25rem; }
     .modal-box { padding: 2rem 1.5rem; }
+    .soft-skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .project-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 460px) {
+    .soft-skills-grid { grid-template-columns: 1fr; }
 }
 
 /* ===== Back to top ===== */
