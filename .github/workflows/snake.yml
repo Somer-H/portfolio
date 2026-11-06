@@ -22,14 +22,13 @@ jobs:
 
     steps:
       # generates a snake animation eating through the contribution graph of
-      # the repository owner, as light and dark SVGs
+      # the repository owner, recolored to match the portfolio's espresso/gold palette
       - name: generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake-dark.svg?color_snake=#fcf6f0&color_dots=#2a211a,#4a3526,#7a5738,#ab7f4e,#d4a373
 
       # push the content of dist/ to the "output" branch
       # the files become available at
