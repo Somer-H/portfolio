@@ -30,22 +30,25 @@ const itemRevealObserver = new IntersectionObserver(
 );
 document.querySelectorAll(".reveal-item").forEach((el) => itemRevealObserver.observe(el));
 
-// Subtle 3D tilt on project cards
-document.querySelectorAll(".project-card").forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const cx = rect.width / 2;
-        const cy = rect.height / 2;
-        const rotateY = ((x - cx) / cx) * 5;
-        const rotateX = -((y - cy) / cy) * 5;
-        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+// Subtle 3D tilt on project cards (skipped if the user prefers reduced motion)
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!prefersReducedMotion) {
+    document.querySelectorAll(".project-card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const cx = rect.width / 2;
+            const cy = rect.height / 2;
+            const rotateY = ((x - cx) / cx) * 5;
+            const rotateX = -((y - cy) / cy) * 5;
+            card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+        });
     });
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "";
-    });
-});
+}
 
 // Mobile nav toggle
 const navToggle = document.getElementById("navToggle");
@@ -253,3 +256,49 @@ if (projectModal) {
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && projectModal && projectModal.classList.contains("open")) closeProjectModal();
 });
+
+// Latest GitHub activity badge (real data from the public events API)
+const GITHUB_ACTIVITY_USER = "Somer-H";
+let latestPushEvent = null;
+
+function timeAgoText(dateStr, lang) {
+    const diffMs = Date.now() - new Date(dateStr).getTime();
+    const mins = Math.max(Math.floor(diffMs / 60000), 1);
+    const hours = Math.floor(mins / 60);
+    const days = Math.floor(hours / 24);
+    let value, unit;
+    if (days > 0) {
+        value = days;
+        unit = lang === "es" ? (days === 1 ? "día" : "días") : days === 1 ? "day" : "days";
+    } else if (hours > 0) {
+        value = hours;
+        unit = lang === "es" ? (hours === 1 ? "hora" : "horas") : hours === 1 ? "hour" : "hours";
+    } else {
+        value = mins;
+        unit = lang === "es" ? (mins === 1 ? "minuto" : "minutos") : mins === 1 ? "minute" : "minutes";
+    }
+    return lang === "es" ? `hace ${value} ${unit}` : `${value} ${unit} ago`;
+}
+
+window.updateGithubLatest = function () {
+    if (!latestPushEvent) return;
+    const lang = window.currentLang || "es";
+    const el = document.getElementById("githubLatest");
+    if (!el) return;
+    el.querySelector(".latest-time").textContent = timeAgoText(latestPushEvent.created_at, lang);
+    el.querySelector(".latest-repo").textContent = latestPushEvent.repo.name.split("/")[1];
+    el.style.display = "flex";
+};
+
+fetch(`https://api.github.com/users/${GITHUB_ACTIVITY_USER}/events/public`)
+    .then((res) => (res.ok ? res.json() : null))
+    .then((events) => {
+        if (!events) return;
+        latestPushEvent = events.find(
+            (e) => e.type === "PushEvent" && e.payload && e.payload.commits && e.payload.commits.length
+        );
+        window.updateGithubLatest();
+    })
+    .catch(() => {
+        /* no GitHub activity available right now; badge stays hidden */
+    });

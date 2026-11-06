@@ -1197,3 +1197,44 @@ section.visible {
     border-color: var(--accent-color);
     color: var(--accent-color);
 }
+
+/* ===== Accessibility ===== */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===== GitHub latest activity ===== */
+.github-latest {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.github-latest .latest-label {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.github-latest .latest-time,
+.github-latest .latest-repo {
+    color: var(--accent-color);
+    font-weight: 600;
+}
