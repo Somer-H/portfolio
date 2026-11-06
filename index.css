@@ -1238,6 +1238,11 @@ button:focus-visible {
     color: var(--text-secondary);
 }
 
+.github-full-link {
+    display: inline-block;
+    margin-top: 1.25rem;
+}
+
 .github-latest .latest-label {
     color: var(--text-primary);
     font-weight: 600;

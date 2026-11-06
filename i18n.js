@@ -133,7 +133,8 @@ const translations = {
     "github.title": { es: "Actividad en GitHub", en: "GitHub Activity" },
     "github.sub": { es: "Una serpiente se come mis contribuciones reales de GitHub", en: "A snake eating my real GitHub contributions" },
     "github.latest.label": { es: "Último commit:", en: "Latest commit:" },
-    "github.latest.on": { es: "en", en: "on" }
+    "github.latest.on": { es: "en", en: "on" },
+    "github.full": { es: "Ver calendario completo en GitHub", en: "See the full calendar on GitHub" }
 };
 
 function detectInitialLang() {
