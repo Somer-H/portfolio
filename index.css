@@ -134,15 +134,20 @@ h1, h2, h3 {
 }
 
 .lang-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 42px;
     height: 32px;
     flex-shrink: 0;
+    padding: 0;
     border-radius: 50px;
     border: 1px solid var(--border-color);
     background: transparent;
     color: var(--text-primary);
     font-size: 0.75rem;
     font-weight: 700;
+    line-height: 1;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -816,8 +821,7 @@ section.visible {
         max-height: 500px;
     }
 
-    .nav-links a,
-    .nav-links button {
+    .nav-links a {
         width: 100%;
         padding: 1rem 2rem;
     }
@@ -829,7 +833,9 @@ section.visible {
     }
 
     .lang-toggle {
-        margin: 1rem 2rem;
+        width: 48px;
+        height: 36px;
+        margin: 1.1rem 2rem;
     }
 }
 
